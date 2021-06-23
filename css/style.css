@@ -20,9 +20,10 @@ html {
     font-size: 2rem;
     font-weight: 300;
     text-decoration: none;
-    position: relative;
+    position: absolute;
     top: 20px;
     left: 20px;
+	transition: all 0.25s linear;
 }
 #menu_on-off {
     visibility: hidden;
@@ -34,8 +35,10 @@ html {
     width: 30px;
     height: 20px;
     position: relative;
+    top: 20px;
     cursor: pointer;
     right: -80%;
+	transition: all 0.25s linear;
 }
 .toggle-button span {
     width: 100%;
@@ -52,6 +55,14 @@ html {
 .toggle-button span:nth-child(3) {
     bottom: 2px;
 }
+#menu_on-off:checked ~ .name {
+    transition: all 0.25s linear;
+    transform: translate(-230px, 0);
+}
+#menu_on-off:checked + .toggle-button {
+    transition: all 0.25s linear;
+    transform: translate(-230px, 0);
+}
 #menu_on-off:checked + .toggle-button span, .menu_on-off:checked + .toggle-button span:nth-child(3) {
     top: calc(100% / 2);
     height: 2px;
@@ -63,7 +74,7 @@ html {
 #menu_on-off:checked + .toggle-button span:nth-child(3) {
     transform: rotate(-45deg);
 }
-/* .nav-bar {
+.nav-bar {
     background-color: #fff;
     padding: 15px;
     position: fixed;
@@ -71,13 +82,11 @@ html {
     bottom: 0;
     right: -250px;
     width: 250px;
-    z-index: 1;
 	transition: all 0.25s linear;
 	font-size: 1.2rem;
-	overflow-y: auto;
 }
 .nav-bar__list {
-    display: flex;
+    display: block;
 }
 .nav-bar__list--item {
     list-style: none;
@@ -87,7 +96,7 @@ html {
     color: #3C4858;
     display: block;
     padding: 10px;
-    padding-bottom: px;
+    padding-bottom: 5px;
     text-decoration: none;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 	transition: all 0.25s linear;
@@ -96,7 +105,10 @@ html {
 	border-bottom-color:rgba(255,255,255,0.4);
     color: black;
     text-decoration: underline;
-} */
+}
+#menu_on-off:checked ~ .nav-bar {
+    right: 0px;
+}
 .intro__title {
     font-size: 5rem;
     font-weight: 700;
