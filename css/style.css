@@ -37,7 +37,7 @@ html {
     position: relative;
     top: 20px;
     cursor: pointer;
-    right: -80%;
+    right: -85%;
 	transition: all 0.25s linear;
 }
 .toggle-button span {
